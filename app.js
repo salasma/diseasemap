@@ -1,4 +1,5 @@
 const Express = require("express")
+const handlebars = require('express-handlebars');
 const mysql = require("mysql")
 const bodyParser = require("body-parser")
 const pool = mysql.createPool({
@@ -12,14 +13,13 @@ const pool = mysql.createPool({
 
 
 const app = Express()
-
+app.set('view engine', 'handlebars');
+app.engine('handlebars', handlebars({layoutsDir: __dirname + '/views/layouts',}));
 app.use(express.static(path.join(__dirname, '/public')));
 
-app.use(bodyParser.urlencoded({extended:false}))
-
-app.get('/',(req,res)=>{
-	res.sendFile(__dirname+'/diseaseconvter-main/example/index.html')
-})
+app.get('/', (req, res) => {
+	res.render('main', {layout : 'index'});
+});
 
 app.get('/profile',(req,res)=>{
 	res.sendFile(__dirname+'/diseaseconvter-main/example/contact.html')	
