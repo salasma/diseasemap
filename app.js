@@ -13,7 +13,7 @@ const pool = mysql.createPool({
 
 const app = Express()
 
-app.use(Express.static('diseaseconvter-main'))
+app.use(express.static(path.join(__dirname, '/public')));
 
 app.use(bodyParser.urlencoded({extended:false}))
 
