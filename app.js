@@ -18,18 +18,16 @@ app.engine('handlebars', handlebars({layoutsDir: __dirname + '/views/layouts',})
 app.use(express.static(path.join(__dirname, '/public')));
 
 app.get('/', (req, res) => {
-	res.render('main', {layout : 'index'});
+	res.render('home', {layout : 'main'});
 });
-
-app.get('/profile',(req,res)=>{
-	res.sendFile(__dirname+'/diseaseconvter-main/example/contact.html')	
-})
-
-app.get('/loggedin',(req,res)=>{
-	res.sendFile(__dirname+'/diseaseconvter-main/example/loggedin.html')	
-})
-app.get('/signup',(req,res)=>{
-	res.sendFile(__dirname+'/diseaseconvter-main/example/usersignup.html')	
-})
+app.get('/profile', (req, res) => {
+	res.render('profile', {layout : 'main'});
+});
+app.get('/signup', (req, res) => {
+	res.render('usersignup', {layout : 'main'});
+});
+app.get('/loggedin', (req, res) => {
+	res.render('loggedin', {layout : 'main'});
+});
 
 app.listen(1499)
