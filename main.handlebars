@@ -1,80 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
 	<title>Disease Map</title>
-	
-	<style>
-	  #alert {
-	    font-family: Arial, Helvetica, sans-serif;
-	    font-size: 16px;
-	    width: 25%;
-            float: right;
-	    height: 600px;
-	    background-color: #ddd;
-	    color: #333;
-	    padding: 5px;
-	    font-weight: bold;
-            
-	  }
-	#website_title {
-		font-size: 50px;
-		background-color: #fff;
-		}
-	</style>
-	    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/common.css">
-	<script src="../lib/raphael.js"></script>
-	<!-- <script src="scale.raphael.js"></script> -->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.js"></script>
-	<script src="color.jquery.js"></script>
-	<script src="../us-map.js"></script>
-	
-	<script>
-	$(document).ready(function() {	  
-	  $('#map2').usmap({
-	    'stateStyles': {
-	      fill: '#025', 
-	      "stroke-width": 1,
-	      'stroke' : '#00b7eb'
-	    },
-	    'stateHoverStyles': {
-	      fill: 'teal'
-	    },
-	    
-	    'click' : function(event, data) {
-	      $('#alert')
-	        .text('Location: '+data.name+' No Current Cases')
-	        .stop()
-	        .css('backgroundColor', '#00b7eb')
-	        .animate({backgroundColor: '#ddd'}, 1000);
-	    }
-	  });
-	  
-	  $('#over-md').click(function(event){
-	    $('#map').usmap('trigger', 'MD', 'mouseover', event);
-	  });
-	  
-	  $('#out-md').click(function(event){
-	    $('#map').usmap('trigger', 'MD', 'mouseout', event);
-	  });
-	});
-	</script>
 </head>
-<body class="w">
-    <div id="website_title">
-	    <h1>Disease Map</h1>
-	</div>
-    <nav class="nav">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="contact.html">Profile</a></li>
-        </ul>
-    </nav>
-  <div id="alert">Click alerts</div>
-  <div id="map2" style="width: 900px; height: 900px;"></div>
-    <div class="main clearfix">   
-	     </div>
-	<footer class="footer">
-    </footer>
+<body>
+	{{{body}}}
 </body>
 </html>
